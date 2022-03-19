@@ -13,7 +13,7 @@ console.log("http server listening on %d", port)
 
 var wss = new WebSocketServer({server: server})
 console.log("websocket server created")
-const clients = [
+const clients = []
 wss.on("connection", function(client) {
   clients.push(client)
   client.on("message".function(data){
