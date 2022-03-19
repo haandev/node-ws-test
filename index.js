@@ -16,7 +16,7 @@ console.log("websocket server created")
 const clients = []
 wss.on("connection", function(client) {
   clients.push(client)
-  client.on("message".function(payload){
+  client.on("message",function(payload){
             clients.forEach((c) => c!==client && c.send(payload));
             })
   client.on("close", function() {
